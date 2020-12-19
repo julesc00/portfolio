@@ -3,18 +3,29 @@
 
 {% block content %}
     <div class="row">
-    <div class="col s12">
-        <div class="card">
-                    <div class="card-image">
-                        <img class="" src="{% static project.image %}" alt="">
-                        <span class="card-title grey-text text-darken-1">{{ project.title|title }}</span>
-                    </div>
-                    <div class="card-content">
+        <div class="col m8">
+            <div class="card">
+                <div class="card-image">
+                    <img class="" src="{% static project.image %}" alt="">
+                    <span class="card-title grey-text text-darken-1">{{ project.title|title }}</span>
+                </div>
+                <div class="card-content">
                     <p>{{ project.description|capfirst }}</p>
-                        <h5 class="teal-text text-darken-2">{{ project.technology }}</h5>
+                    <h5 class="teal-text text-darken-2">{{ project.technology }}</h5>
                 </div>
+            </div>
+        </div>
+
+        <div class="col m4">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-1">{{ project.title|title }}</span>
+                    <div class="divider"></div>
+                    <p>{{ project.description|capfirst }}</p>
+                    <p>{{ project.technology }}</p>
                 </div>
-    </div>
+            </div>
+        </div>
     </div>
 
 {% endblock %}
