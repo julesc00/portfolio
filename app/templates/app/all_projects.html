@@ -1,0 +1,25 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="row">
+    {% for project in projects %}
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="" src="{% static project.image %}" alt="">
+                        <span class="card-title grey-text text-darken-1">{{ project.title|title }}</span>
+                    </div>
+                    <div class="card-content">
+                    <p>{{ project.description|capfirst }}</p>
+                        <h5 class="teal-text text-darken-2">{{ project.technology }}</h5>
+                </div>
+                    <div class="card-action teal lighten-5">
+                        <a class="grey-text text-darken-2" href="{% url 'app:project-detail' project.pk %}">Read more</a>
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}
